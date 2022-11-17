@@ -12,8 +12,8 @@ print(Data1[3])
 print(Data1.count(7))
 
 print("___DATA2___")
-print(Data2.pop())
-print(Data2.add("Alpha"))
+Data2.pop()
+Data2.add("Alpha")
 print(Data2)
 
 print("___DATA3___")
