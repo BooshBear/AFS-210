@@ -19,21 +19,22 @@ def loop2():
 
 def loop1Rec(num,odd_sum):
     # Duplicate the loop1 function using recursion
-    if num == 0:
-        return 0
+    if (num % 2) == 1:
+        print(odd_sum)
     else:
-        num - loop1Rec(num % 2 == 0)
-        return odd_sum
-
-
+        loop1Rec(num - 1, odd_sum)
 
     
-
 def loop2Rec(num,even_sum):
     # Duplicate the loop2 function using recursion
-    pass
+    if (num % 2) == 1:
+        print(even_sum)
+    else:
+        loop1Rec(num - 1, even_sum)
 
 
 
 print(loop1())
+print(loop1Rec(20, 100))
 print(loop2())
+print(loop2Rec(20, 90))
