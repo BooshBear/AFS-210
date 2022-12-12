@@ -20,9 +20,9 @@ class HashTable:
         hashVal = 0
         for ch in str(keystr):
             hashVal += ord(ch)
-
+    
         return (hashVal*len(keystr) % self.size)
-        pass
+        
 
     def put(self,key,data):
         # Insert your code here to store key and data
