@@ -78,12 +78,7 @@ class DoublyLinkedList:
             if(current.data == data):
                 return n
             current = current.next
-            
-
-     
-        
-
-        
+   
     def add(self, data) -> None:
         # Append an item to the end of the list
         self.addLast(data)
