@@ -28,16 +28,20 @@ class Song:
 class Queue:
     def __init__(self):
         self.queue = []
+        self.count = 0
 
     def enqueue(self, e):
+        self.count += 1
         return self.queue.append(e)
 
     def dequeue(self):
+        self.count -= 1
         if len(self.queue) < 1:
             return None
         return self.queue.pop(0)
 
     def removeSong(self, e):
+        self.count -= 1
         for i in range(len(self.queue)):
             if e == self.queue[i]['Title']:
                 self.queue.pop(i)
@@ -60,12 +64,14 @@ class Queue:
 
     def shuffleQueue(self):
         size = len(self.queue)
-        a = self.queue.pop(size//2)
-        tempList = []
-        for i in self.queue:
-            tempList.append(a)
-        self.queue = tempList
+        if size <= 0:
+            pass
+        else:
+            self.prevSong()
+            self.prevSong()
         return
+
+    
 
 def menu():
     print()
@@ -139,16 +145,3 @@ while True:
     elif choice == 0:
         print("Goodbye.")
         break
-
-            
-# 10 songs
-# 1."‘I am a God’", "Kanye West"
-# 2."‘Coldest Winter’", "Kanye West"
-# 3."‘Runaway’", "Kanye West"
-# 4."‘Black Skinhead’", "Kanye West"
-# 5."‘Addiction’", "Kanye West"
-# 6."‘Hold My Liquor’", "Kanye West"
-# 7."‘On Sight’", "Kanye West"
-# 8."‘Monster’", "Kanye West"
-# 9."‘Gold Digger’", "Kanye West"
-# 10."‘All of the Lights’", "Kanye West"
